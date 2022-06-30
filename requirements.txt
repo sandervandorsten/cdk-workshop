@@ -1,2 +1,5 @@
 aws-cdk-lib==2.29.1
+cdk-dynamo-table-view>=0.2
 constructs>=10.0.0,<11.0.0
+diagrams==0.21.1
+boto3>=1.24

@@ -10,8 +10,9 @@
       "requirements*.txt",
       "source.bat",
       "**/__init__.py",
-      "python/__pycache__",
-      "tests"
+      "**/__pycache__",
+      "tests",
+      "images"
     ]
   },
   "context": {
