@@ -58,10 +58,10 @@ class HitCounter(Construct):
         # Allow the handler to invoke the downstream function
         downstream.grant_invoke(self.handler)
 
-    def diagram(self, cluster_name: str) -> Node:
+    @staticmethod
+    def diagram(cluster_name: str) -> Node:
         """returns a diagram of the infrastructure components"""
-        with Cluster(cluster_name, direction='TB'):
-            _lambda_downstream = Lambda(self.handler.function_name)
-            _ddb = Dynamodb(self.table.table_name)
-            _diagram = _lambda_downstream >> _ddb
-            return _diagram
+        with Cluster(cluster_name, direction="TB"):
+            _lambda_downstream = Lambda("HitCounterHandler")
+            _ddb = Dynamodb("Hits")
+            return _lambda_downstream >> _ddb

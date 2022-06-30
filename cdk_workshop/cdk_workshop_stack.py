@@ -38,8 +38,6 @@ class CdkWorkshopStack(Stack):
             handler=hello_with_counter.handler
         )
 
-
-
         # Manual Diagram Creation
         with Diagram("API Hello World", show=False, filename="images/hello_world_lambda"):
 
